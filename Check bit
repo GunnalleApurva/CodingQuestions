@@ -1,0 +1,19 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+bool issetbit(int n,int k)
+{
+    return n&(1<<(k-1));
+}
+
+int main() {
+    long long int n;
+    int k;
+    cin>>n>>k;
+    issetbit(n,k+1) ? cout<<"true":cout<<"false";
+    // passed k+1, because according to question LSB is 0th bit
+}
