@@ -1,0 +1,23 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int row,col,i,j,sum = 0;
+    long long int m[100][100];
+    cin>>row>>col;
+    for(i=0;i<row;i++)
+    {
+        for (j=0;j<col;j++)
+        {
+            cin>>m[i][j];
+            sum+=m[i][j];
+        }
+        cout<<sum<<endl;
+        sum=0;
+    }
+}
