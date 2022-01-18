@@ -1,0 +1,10 @@
+#Problem Code: ALORA1
+
+T = int(input())
+for _ in range(T):
+    n = int(input())
+    a = list(map(int,input().split()))
+    if n == len(set(a)):
+        print("no")
+    else:
+        print("yes")
