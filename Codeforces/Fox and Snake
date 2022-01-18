@@ -1,0 +1,17 @@
+def pattern(n,m):
+    n = n//2
+    if (n % 2 == 1):
+        print('.'*(m-1),end='')
+        print('#')
+    else:
+        print('#',end='')
+        print('.'*(m-1))
+        
+
+n,m = map(int,input().split())
+for i in range(1,n+1):
+    if i%2 :
+        print('#'*m)
+    else:
+        pattern(i,m)
+        
