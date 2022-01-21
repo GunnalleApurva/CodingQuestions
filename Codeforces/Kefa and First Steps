@@ -1,0 +1,16 @@
+n = int(input())
+l = list(map(int,input().split()))
+m = 1
+t = 1
+prev = l[0]
+for i in range(1,n):
+    if l[i]>= prev:
+        t += 1
+        prev = l[i]
+    else:
+        m = max(m,t)
+        t = 1
+    prev = l[i]
+print(max(m,t))
+        
+        
