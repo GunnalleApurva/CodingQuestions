@@ -1,0 +1,32 @@
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+
+        long long int ans = 0;
+        int c=0;
+        ListNode *it1=l1,*it2=l2;
+
+	  ListNode *sum = new ListNode();    
+        ListNode *head = sum;
+
+        while(it1 ||it2 || c )
+        { int s = c;
+		if(it1)
+		s += it1->val;
+		if(it2)
+		s += it2->val;
+		c = s/10;
+		s = s%10;
+		ListNode *temp = new ListNode(s);
+         
+		sum->next = temp;
+		sum = sum->next;
+         if(it1)
+         it1 = it1->next;
+         if(it2)
+         it2 = it2->next;
+		}
+        
+        return head->next;
+    }
+};
