@@ -1,0 +1,20 @@
+//Given the head of a singly linked list, reverse the list, and return the reversed list.
+
+
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if( head==NULL || head->next==NULL) return head;
+        ListNode* temp = head;
+        ListNode* rev = reverseList(head->next);
+        head->next = NULL;
+        ListNode* halfrev = rev ;
+        while(halfrev->next)
+        {
+            halfrev = halfrev->next;
+        }
+        halfrev->next = head;
+        return rev;
+    }
+};
