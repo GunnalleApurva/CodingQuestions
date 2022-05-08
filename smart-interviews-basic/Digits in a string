@@ -1,0 +1,12 @@
+
+digits ='0123456789'
+str = input()
+c = 1
+for char in str:
+    if char not in digits:
+        c = 0
+        break
+if c :
+    print('Yes')
+else:
+    print('No')
