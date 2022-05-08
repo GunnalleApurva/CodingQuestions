@@ -1,0 +1,11 @@
+vowels = 'aeiouAEIOU'
+str = input()
+c = 1
+for char in str:
+    if char not in vowels:
+        c = 0
+        break
+if c == 1:
+    print('Yes')
+else:
+    print('No')
