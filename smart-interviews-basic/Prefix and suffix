@@ -1,0 +1,41 @@
+#include <cmath>
+#include <cstdio>
+#include<string>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int largest_prefix_suffix(const string &str) { 
+  vector < int > lps(str.length() , 0);
+    int j=0, i=1;
+    while(i< str.length())
+    {
+        if( str[i] == str[j])
+        {
+            lps[i] = j+1;
+            i++;
+            j++;
+        }
+        else
+        {
+            if(j==0)
+                i++;
+            else
+                j = lps[j-1];
+        }
+    }
+    return lps.back();
+  
+} 
+int main() { 
+      
+string s ;
+    cin >>s;
+  
+cout << largest_prefix_suffix(s); 
+  
+return 0; 
+
+}
