@@ -1,0 +1,3 @@
+n = input()
+n = [int(char) for char in n]
+print(sum(n))
