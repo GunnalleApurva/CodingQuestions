@@ -1,0 +1,10 @@
+str = input()
+empty = ''
+for char in str :
+    if char >= 'A' and char <='Z':
+        empty  += chr(ord(char)+32)
+    elif char >= 'a' and char <='z':
+        empty += chr(ord(char)-32)
+    else:
+        empty += char
+print(empty)
