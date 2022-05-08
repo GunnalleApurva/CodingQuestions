@@ -1,0 +1,7 @@
+n = input()
+l = [int(i) for i in n]
+l = sum(l)
+if int(n)%l == 0:
+    print("Yes")
+else:
+    print("No")
