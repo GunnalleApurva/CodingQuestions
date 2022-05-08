@@ -1,0 +1,14 @@
+vowels = 'aeiou'
+consonants = 'bcdfghjklmnpqrstvwxyz'
+v , c = 0 , 0
+str = input()
+str = str.lower()
+for char in str:
+    if char in vowels:
+        v += 1
+    elif char in consonants:
+        c += 1
+    else:
+        v += 0
+        
+print(v,c)
