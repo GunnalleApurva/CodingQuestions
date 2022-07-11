@@ -1,0 +1,25 @@
+string timeConversion(string s) {
+    if (s[8] == 'A' && s.substr(0,2) == "12")
+    {
+        s[0] = '0';
+        s[1] = '0';     
+    }
+    if (s[8] == 'P' && s.substr(0,2)!="12") {
+    {
+        if ( (s[0]=='0'  )  )
+        {
+            if (s[1] <'8')
+            s[1] += 2  ;
+            s[0] = '1' ;
+        }
+        else {
+        {
+            s[0] += 1 ;
+            s[1] += 2;
+            
+        }
+        }
+    }
+    }
+    return (s.substr(0,8));
+}
