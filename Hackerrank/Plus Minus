@@ -1,0 +1,16 @@
+void plusMinus(vector<int> arr) {
+  double pos = 0 , neg = 0 , zero = 0;
+  int p=0,n=0,z=0;
+  for (auto v : arr)
+  {
+    v > 0 ? (p++) : (v == 0 ? (z++) : (n++));
+  }
+  double total = p+n+z;
+  // cout<<p<<" "<<n<<" "<<z<<endl;
+  pos = p/total;
+  neg = n/total;
+  zero = z/total;
+  cout<<fixed<<setprecision(6)<<pos<<endl;
+  cout<<fixed<<setprecision(6)<<neg<<endl;
+  cout<<fixed<<setprecision(6)<<zero<<endl;
+}
