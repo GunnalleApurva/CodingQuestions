@@ -1,0 +1,10 @@
+Python
+def aVeryBigSum(ar):
+    return sum(ar)
+    
+   
+
+cpp
+long aVeryBigSum(vector<long> ar) {
+  return accumulate(ar.begin(), ar.end(), 0);
+}
