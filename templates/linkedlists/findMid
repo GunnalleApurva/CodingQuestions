@@ -1,0 +1,15 @@
+
+Node* findMid(Node* head,bool flag){
+    
+    if(!head || !head->next) return head;
+    Node *slow = head,*fast = head;
+    while(fast->next && f->next){
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    if(fast->next) // even
+    {
+        if(!flag) return slow->next;
+    }
+    return slow;
+}
