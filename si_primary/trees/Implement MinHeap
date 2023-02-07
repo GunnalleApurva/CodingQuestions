@@ -1,0 +1,92 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#define ll long long int
+using namespace std;
+
+void swap(int& a, int& b){
+    int c = a;
+    a = b;
+    b = c;
+}
+
+class minHeap{
+    public :
+    vector<ll> v;
+    minHeap(){
+        // pass
+    }
+    void insert(int x){
+        v.push_back(x);
+        ll idx = v.size()-1;
+        while( idx != 0 && v[idx] < v[(idx-1)/2]){
+            swap(v[idx],v[(idx-1)/2]);
+            idx = (idx-1)/2;
+        }
+    }
+    void delMin(){
+        
+        v[0] = v[v.size()-1];
+        v.pop_back();
+        int idx = 0, n = v.size();
+        
+        while(idx < n){
+            int c1_idx = 2*idx+1, c2_idx = 2*(idx+1);
+            
+            //no children
+            if( c1_idx >= n ){
+                return;
+            }
+            
+            //finding idx of child with min val
+            int min_c_idx = c1_idx;
+            if(c2_idx<n &&  (v[c2_idx] < v[c1_idx]) ){
+                min_c_idx = c2_idx;
+            }
+            
+            if (v[min_c_idx]<v[idx]){
+                    swap(v[idx],v[min_c_idx]);
+                    idx = min_c_idx;
+            }
+            else{
+                return;
+            }
+        }
+    }
+    ll getMin(){
+        return v[0];
+    }
+    bool empty(){
+        return v.size()==0;
+    }
+};
+
+int main() {
+    int T;
+    cin>>T;
+    minHeap *mh = new minHeap();
+    string choice;
+    while(T--){
+        cin>>choice;
+        if(choice == "insert"){
+            ll x; cin>>x;
+            mh->insert(x);
+        }
+        else if (choice == "getMin"){
+            if(mh->empty()){
+                cout<<"Empty\n";
+            }
+            else{
+                cout<<mh->getMin()<<"\n";
+            }
+        }
+        else{
+            if(!mh->empty()){
+                 mh->delMin();
+            }
+        }
+    }
+    return 0;
+}
