@@ -1,0 +1,36 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <bits/stdc++.h>
+#define ll long long int
+using namespace std;
+
+int main() {
+    int T;
+    cin>>T;
+    priority_queue<int, vector<int>, greater<int>> mh;
+    string choice;
+    while(T--){
+        cin>>choice;
+        if(choice == "insert"){
+            ll x; cin>>x;
+            mh.push(x);
+        }
+        else if (choice == "getMin"){
+            if(mh.size() == 0){
+                cout<<"Empty\n";
+            }
+            else{
+                cout<<mh.top()<<"\n";
+            }
+        }
+        else{
+            if(mh.size()){
+                mh.pop();
+            }
+        }
+    }
+    return 0;
+}
