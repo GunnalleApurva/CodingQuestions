@@ -1,0 +1,17 @@
+t = int(input())
+for _ in range(t):
+
+    #bl : bottom-left, tr : top-right
+    x1bl, y1bl, x1tr, y1tr = map(int,input().split())
+    x2bl, y2bl, x2tr, y2tr = map(int,input().split())
+    
+    #find the length and breadth of the rectangles and add their areas to get the "ans"
+    ans = abs(x1bl - x1tr)*abs(y1bl - y1tr)+  abs(x2bl - x2tr)* abs(y2bl - y2tr)
+   
+    #if the values of both xd and yd are positive it means their is an overlap, which is in the shape of rectangel     ofcourse, so deduce this overlapped area from the "ans"
+    
+    xd = min(x1tr, x2tr) - max(x1bl, x2bl)
+    yd = min(y1tr, y2tr) - max(y1bl, y2bl)
+    if( xd>0 and yd>0):
+        ans -= xd*yd
+    print(ans)
